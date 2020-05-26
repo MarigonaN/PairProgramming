@@ -57,8 +57,11 @@
         <tbody></tbody>
       </table>
       <ol class="list"></ol>
-      <button type="button" class="btn btn-primary" id="button1">Primary</button>
+      <button type="button" class="btn btn-primary" id="button1">
+        Primary
+      </button>
     </div>
+    <div id="userInfo"></div>
     <script>
       window.onload = async function () {
         let addresses = [];
@@ -83,6 +86,23 @@
           <li>${user[i].name}</li>
 
           `;
+              //       let user = user[i];
+              //       function userCard(user) {
+              //         return `
+              //   <div class="col text-center" id=${user[i].id}>
+              //       <p>
+              //         <a href="detail.html?id=${user[i].id}">
+              //           Name: "${user[i].name}" <br>
+              //           Username: "${user[i].username}" <br>
+              //           Email: "${user[i].email}"
+              //         </a>
+              //       </p>
+              //   </div>
+              // `;
+              //       }
+
+              //       let userInfo = document.querySelector("#userInfo");
+              //       userInfo.innerHTML = userCard(user[0]);
             }
             for (let i = 0; i < user.length; i++) {
               addresses.push([
@@ -93,17 +113,15 @@
               ]);
               console.log(addresses);
             }
-            for(let i = 0; i < user.length; i++){
-              name.push(user[i].name)
-             
+            for (let i = 0; i < user.length; i++) {
+              name.push(user[i].name);
             }
 
-            let button1 = document.querySelector('#button1');
-              button1.addEventListener('click', function(){
-                let sorted = name.sort();
-                console.log(sorted);
-          
-              })
+            let button1 = document.querySelector("#button1");
+            button1.addEventListener("click", function () {
+              let sorted = name.sort();
+              console.log(sorted);
+            });
           }
         } catch (err) {
           console.log(err);
